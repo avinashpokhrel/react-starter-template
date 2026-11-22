@@ -5,6 +5,10 @@ export const seo = {
   title: "Your Brand | Official Website",
   description: "Discover products and services from Your Brand.",
   keywords: ["Your Brand", "products", "services"],
+  developer: {
+    name: "Avinash Pokhrel",
+    url: "https://avinashpokhrel.com.np",
+  },
   language: "en",
   socials: [] as string[],
 };

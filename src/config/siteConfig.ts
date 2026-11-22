@@ -9,5 +9,9 @@ export const siteConfig = {
     title: "Build something great.",
     description: seo.description,
   },
+  developer: {
+    name: seo.developer.name,
+    url: seo.developer.url,
+  },
   socials: seo.socials,
 };

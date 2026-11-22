@@ -29,6 +29,11 @@ function staticSeoPlugin(siteUrl: string): Plugin {
       name: seo.name,
       url: normalizedSiteUrl,
       description: seo.description,
+      developer: {
+        "@type": "Person",
+        name: seo.developer.name,
+        url: seo.developer.url,
+      },
       sameAs: seo.socials,
     },
     {
@@ -75,11 +80,6 @@ function staticSeoPlugin(siteUrl: string): Plugin {
         type: "asset",
         fileName: "sitemap.xml",
         source: `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${escapeHtml(canonical)}</loc></url></urlset>`,
-      });
-      this.emitFile({
-        type: "asset",
-        fileName: "404.html",
-        source: `<!doctype html><html lang="${escapeHtml(seo.language)}"><head><meta charset="utf-8"><meta name="robots" content="noindex, follow"><title>Page not found | ${escapeHtml(seo.name)}</title><meta name="description" content="The page you requested could not be found."></head><body><main><h1>Page not found</h1><p><a href="/">Return to the home page</a></p></main></body></html>`,
       });
     },
   };
